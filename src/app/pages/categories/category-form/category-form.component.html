@@ -30,7 +30,7 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="name">Nome</label>
-          <input type="text" class="form-control" id="name" formControlName="name">
+          <input type="text" class="form-control" id="name" formControlName="name"/>
 
           <div class="text-danger" *ngIf="categoryForm.get('name').invalid && categoryForm.get('name').touched">
             <p *ngIf="categoryForm.get('name').errors.required">Dado obrigatório</p>
@@ -40,10 +40,21 @@
 
         <div class="form-group col-md-8">
           <label for="description">Descrição</label>
-          <input type="text" class="form-control" id="description" formControlName="description">
+          <input type="text" class="form-control" id="description" formControlName="description"/>
+
+          <div class="text-danger" *ngIf="categoryForm.get('description').invalid && categoryForm.get('description').touched">
+            <p *ngIf="categoryForm.get('description').errors.required">Dado obrigatório</p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="alert alert-danger mt-4" *ngIf="serverErrorMessages">
+    <strong>Erro no servidor:</strong>
+    <ul>
+      <li *ngFor="let error of serverErrorMessages">{{error}}</li>
+    </ul>
   </div>
 
   <button
