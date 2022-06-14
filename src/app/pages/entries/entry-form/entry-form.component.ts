@@ -1,5 +1,5 @@
+import { AfterContentChecked, Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
-import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { EntryService } from './../shared/entry.service';
 import { Entry } from '../shared/entry.model'
