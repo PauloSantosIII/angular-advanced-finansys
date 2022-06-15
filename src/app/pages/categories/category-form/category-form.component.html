@@ -22,19 +22,14 @@
           <label for="name">Nome</label>
           <input type="text" class="form-control" id="name" formControlName="name"/>
 
-          <div class="text-danger" *ngIf="resourceForm.get('name').invalid && resourceForm.get('name').touched">
-            <p *ngIf="resourceForm.get('name').errors.required">Dado obrigatório</p>
-            <p *ngIf="resourceForm.get('name').errors.minlength" >Deve ter no mínimo 2 caracteres</p>
-          </div>
+          <app-form-field-error [form-control]="resourceForm.get('name')"></app-form-field-error>
         </div>
 
         <div class="form-group col-md-8">
           <label for="description">Descrição</label>
           <input type="text" class="form-control" id="description" formControlName="description"/>
 
-          <div class="text-danger" *ngIf="resourceForm.get('description').invalid && resourceForm.get('description').touched">
-            <p *ngIf="resourceForm.get('description').errors.required">Dado obrigatório</p>
-          </div>
+          <app-form-field-error [form-control]="resourceForm.get('description')"></app-form-field-error>
         </div>
       </div>
     </div>
