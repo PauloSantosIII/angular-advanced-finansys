@@ -40,7 +40,7 @@
             </div>
             <input
               type="text"
-              class="form-control text-end"
+              class="form-control text-right"
               id="amount"
               formControlName="amount"
               [imask]="imaskConfig"
@@ -54,7 +54,7 @@
           <p-calendar
             id="date"
             formControlName="date"
-            inputStyleClass="form-control bg-white text-dark text-end"
+            inputStyleClass="form-control bg-white text-dark text-right"
             dataTyping="string"
             dateFormat="dd/mm/yy"
             [locale]="ptBR"
@@ -105,7 +105,7 @@
   <button
     [disabled]="submittingForm || resourceForm.invalid"
     type="submit"
-    class="btn btn-primary btn-lg float-end mt-3"
+    class="btn btn-primary btn-lg float-right mt-3"
   >Salvar</button>
 
 </form>

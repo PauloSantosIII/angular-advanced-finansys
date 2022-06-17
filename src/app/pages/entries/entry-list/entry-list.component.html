@@ -14,7 +14,7 @@
     <tr class="bg-primary text-light">
       <th>Lançamento</th>
       <th>Categoria</th>
-      <th class="text-end">Valor R$</th>
+      <th class="text-right">Valor R$</th>
       <th class="text-center">Ações</th>
     </tr>
   </thead>
@@ -28,7 +28,7 @@
       <td>
         {{entry.name}}
       </td>
-      <td class="text-end">
+      <td class="text-right">
         <strong [ngClass]="entry.type === 'revenue' ? 'text-success' : 'text-danger'">
           {{entry.amount}}
         </strong><br>
