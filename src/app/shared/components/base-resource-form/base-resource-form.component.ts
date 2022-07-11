@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router'
 import { AfterContentChecked, OnInit, Injector, Directive } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms'
 
 import { BaseResourceModel } from '../../models/base-resource.model'
 import { BaseResourceService } from '../../services/base-resource.service'
@@ -11,14 +11,14 @@ import toastr from 'toastr'
 @Directive()
 export abstract class BaseResourceFormComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
   currentAction: string
-  resourceForm: FormGroup
+  resourceForm: UntypedFormGroup
   pageTitle: string
   serverErrorMessages: string[] = null
   submittingForm: boolean = false
 
   protected route: ActivatedRoute
   protected router: Router
-  protected formBuilder: FormBuilder
+  protected formBuilder: UntypedFormBuilder
 
   constructor(
     protected injector: Injector,
@@ -28,7 +28,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   ) {
     this.route = this.injector.get(ActivatedRoute)      
     this.router = this.injector.get(Router)    
-    this.formBuilder = this.injector.get(FormBuilder)      
+    this.formBuilder = this.injector.get(UntypedFormBuilder)      
   }
 
   ngOnInit() {
